@@ -3,37 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Symptom Form</title>
+    <title>MedBridge</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
-        <h2 id="title">Enter Symptoms</h2>
+        <h1>🏥 MedBridge</h1>
+        <p>Select Language</p>
 
-        <form action="summary.php" method="POST">
+        <select id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="te">Telugu</option>
+        <option value="bn">Bengali</option>
+        <option value="kn">Kannada</option>
+        <option value="kok">Konkani</option>
+    </select>
 
-            <label id="label-body"></label>
-            <select name="body" id="bodySelect"></select>
-
-            <label id="label-symptom">Symptom</label>
-            <select name="symptom" id="symptomSelect"></select>
-
-            <label id="label-pain"></label>
-            <input type="number" name="pain" min="1" max="10" required>
-
-            <label id="label-duration"></label>
-            <select name="duration" id="durationSelect"></select>
-
-            <label id="label-notes"></label>
-            <textarea name="notes"></textarea>
-
-            <button id="submit-btn" type="submit"></button>
-        </form>
+        <button onclick="goToForm()">Continue</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function goToForm() {
+            localStorage.setItem("lang", document.getElementById("language").value);
+            window.location.href = "form.html";
+        }
+    </script>
+
 </body>
 
 </html>
