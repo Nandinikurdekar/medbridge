@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Symptom Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 id="title">Enter Symptoms</h2>
+
+        <form action="summary.php" method="POST">
+
+            <label id="label-body"></label>
+            <select name="body" id="bodySelect"></select>
+
+            <label id="label-symptom">Symptom</label>
+            <select name="symptom" id="symptomSelect"></select>
+
+            <label id="label-pain"></label>
+            <input type="number" name="pain" min="1" max="10" required>
+
+            <label id="label-duration"></label>
+            <select name="duration" id="durationSelect"></select>
+
+            <label id="label-notes"></label>
+            <textarea name="notes"></textarea>
+
+            <button id="submit-btn" type="submit"></button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
