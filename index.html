@@ -4,67 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>MedBridge</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="landing-page"></body>
+<body>
 
-<!-- HERO -->
-<div class="hero">
+    <div class="hero">
 
-    <div class="glass-card">
+        <div class="hero-card">
 
-        <h1>MedBridge</h1>
-        <p>Breaking language barriers in healthcare</p>
+            <h1>🩺 MedBridge</h1>
+            <p class="tagline">Multilingual Patient Intake System</p>
 
-        <!-- LANGUAGE -->
-        <select id="langSelect">
-                <option value="en">English</option>
-                <option value="hi">Hindi</option>
-                <option value="kn">Kannada</option>
-                <option value="ta">Tamil</option>
-                <option value="te">Telugu</option>
-                <option value="bn">Bengali</option>
-                <option value="kok">Konkani</option>
-            </select>
+            <div class="divider"></div>
 
-        <button onclick="startApp()">Get Started →</button>
+            <label>Select Language</label>
+            <select id="language">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="kn">Kannada</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+            <option value="bn">Bengali</option>
+            <option value="kok">Konkani</option>
+        </select>
+
+            <button onclick="startApp()">Start</button>
+
+        </div>
 
     </div>
 
-</div>
-
-<!-- FEATURES -->
-<div class="features">
-
-    <div class="feature-card">
-        <h3>🌐 Multi-language</h3>
-        <p>Communicate in regional languages effortlessly</p>
-    </div>
-
-    <div class="feature-card">
-        <h3>🎤 Voice Input</h3>
-        <p>Describe symptoms using natural speech</p>
-    </div>
-
-    <div class="feature-card">
-        <h3>📄 Smart Reports</h3>
-        <p>Generate clean, structured patient summaries</p>
-    </div>
-
-</div>
-
-<script>
-    function startApp() {
-        let lang = document.getElementById("langSelect").value;
-        localStorage.setItem("lang", lang);
-        window.location.href = "form.html";
-    }
-</script>
+    <script>
+        function startApp() {
+            let lang = document.getElementById("language").value;
+            localStorage.setItem("lang", lang);
+            window.location.href = "form.html";
+        }
+    </script>
 
 </body>
 
