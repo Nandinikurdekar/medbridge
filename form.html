@@ -16,41 +16,57 @@
 
             <h2 id="title">Enter Symptoms</h2>
 
-            <form action="summary.php" method="POST">
+            <form action="summary.php" method="POST" onsubmit="this.submit(); return true;">
 
-                <label>Body Part</label>
-                <div class="dropdown">
-                    <div class="dropdown-selected" onclick="toggleDropdown('bodyDropdown')">Select Body</div>
-                    <div class="dropdown-options" id="bodyDropdown"></div>
-                    <input type="hidden" name="body" id="bodyInput">
+                <!-- ===== SECTION 1 ===== -->
+                <div class="section">
+                    <h3>Basic Info</h3>
+
+                    <label>Body Part</label>
+                    <div class="dropdown">
+                        <div class="dropdown-selected" onclick="toggleDropdown('bodyDropdown')">Select Body</div>
+                        <div class="dropdown-options" id="bodyDropdown"></div>
+                        <input type="hidden" name="body" id="bodyInput">
+                    </div>
+
+                    <label>Symptom</label>
+                    <div class="dropdown">
+                        <div class="dropdown-selected" onclick="toggleDropdown('symptomDropdown')">Select Symptom</div>
+                        <div class="dropdown-options" id="symptomDropdown"></div>
+                        <input type="hidden" name="symptom" id="symptomInput">
+                    </div>
                 </div>
 
-                <label>Symptom</label>
-                <div class="dropdown">
-                    <div class="dropdown-selected" onclick="toggleDropdown('symptomDropdown')">Select Symptom</div>
-                    <div class="dropdown-options" id="symptomDropdown"></div>
-                    <input type="hidden" name="symptom" id="symptomInput">
+                <!-- ===== SECTION 2 ===== -->
+                <div class="section">
+                    <h3>Details</h3>
+
+                    <label>Pain Level</label>
+                    <input type="number" name="pain">
+
+                    <label>Duration</label>
+                    <select name="duration" id="durationSelect"></select>
                 </div>
 
-                <label>Pain Level</label>
-                <input type="number" name="pain">
+                <!-- ===== SECTION 3 ===== -->
+                <div class="section">
+                    <h3>Additional Info</h3>
 
-                <label>Duration</label>
-                <select name="duration" id="durationSelect"></select>
+                    <label>Notes</label>
+                    <textarea name="notes" id="notes"></textarea>
 
-                <label>Notes</label>
-                <textarea name="notes" id="notes"></textarea>
+                    <div class="row">
+                        <button type="button" class="mic-btn" onclick="startVoice()">🎤 Speak</button>
+                        <button type="button" onclick="handleFile()">📄 Translate</button>
+                    </div>
 
-                <button type="button" class="mic-btn" onclick="startVoice()">🎤 Speak</button>
+                    <input type="file" id="fileInput">
 
-                <label>Upload Document</label>
-                <input type="file" id="fileInput">
+                    <textarea id="translatedText" placeholder="Translated text..."></textarea>
+                </div>
 
-                <button type="button" onclick="handleFile()">Translate File</button>
-
-                <textarea id="translatedText"></textarea>
-
-                <button type="submit">Generate Summary</button>
+                <!-- ===== SUBMIT ===== -->
+                <button type="submit" class="submit-btn">Generate Summary</button>
 
             </form>
 
@@ -60,5 +76,3 @@
     <script src="script.js"></script>
 
 </body>
-
-</html>

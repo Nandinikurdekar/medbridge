@@ -1,129 +1,298 @@
-/* ===== GLOBAL ===== */
+/* ===== BASE ===== */
 
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #eef3f8;
+    background: #f4f7fb;
 }
 
 
-/* HEADER */
+/* ===== HEADER ===== */
 
 .header {
-    background: linear-gradient(135deg, #2e8b57, #3cb371);
+    background: #1e3a8a;
     color: white;
-    padding: 15px;
-    font-size: 20px;
+    padding: 18px 30px;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 
-/* LAYOUT */
+/* ===== LAYOUT ===== */
 
 .app {
     display: flex;
     justify-content: center;
-    padding: 40px;
+    padding: 60px 20px;
 }
 
 
-/* CARD */
+/* ===== CARD ===== */
 
 .card {
-    width: 450px;
+    width: 500px;
     background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
 }
 
 
-/* INPUTS */
+/* ===== TITLE ===== */
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+
+/* ===== FORM GROUP ===== */
 
 label {
-    margin-top: 12px;
-    display: block;
+    font-size: 13px;
     font-weight: 600;
+    color: #555;
+    margin-top: 18px;
+    display: block;
 }
+
+
+/* ===== INPUTS ===== */
 
 input,
 textarea,
 select {
     width: 100%;
     margin-top: 6px;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 8px;
     border: 1px solid #ddd;
-    background: #f9fafb;
+    background: #f9fafc;
+    font-size: 14px;
 }
 
 
-/* BUTTON */
+/* FOCUS = CLEAN, NOT GLOWY */
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #1e3a8a;
+    outline: none;
+}
+
+
+/* ===== BUTTON ===== */
 
 button {
-    margin-top: 15px;
-    padding: 12px;
+    margin-top: 25px;
+    padding: 14px;
     width: 100%;
     border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #2e8b57, #3cb371);
+    border-radius: 8px;
+    background: #1e3a8a;
     color: white;
     font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
-    transition: 0.25s;
-}
-
-button:hover {
-    transform: translateY(-2px);
 }
 
 
-/* SMALL BUTTONS */
+/* REMOVE FLOATING SMALL BUTTON CHAOS */
 
 .mic-btn,
 button[type="button"] {
-    width: auto;
-    padding: 10px 16px;
+    width: 100%;
 }
 
 
-/* DROPDOWN */
+/* ===== DROPDOWN ===== */
 
 .dropdown {
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 .dropdown-selected {
-    padding: 10px;
-    background: #f9fafb;
+    padding: 14px;
+    background: #f9fafc;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .dropdown-options {
     display: none;
     background: white;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-top: 5px;
+    border-radius: 8px;
+    margin-top: 4px;
 }
 
 .dropdown-options div {
-    padding: 10px;
-    cursor: pointer;
+    padding: 12px;
 }
 
 .dropdown-options div:hover {
-    background: #2e8b57;
+    background: #1e3a8a;
     color: white;
 }
 
 
-/* REPORT */
+/* ===== REPORT ===== */
 
 .report-box {
-    background: #f9fafb;
-    padding: 14px;
+    background: #f9fafc;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid #1e3a8a;
+}
+
+
+/* ===== SECTION GROUPING ===== */
+
+.section {
+    margin-top: 25px;
+}
+
+.section h3 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #1e3a8a;
+}
+
+
+/* ===== ROW BUTTONS ===== */
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.row button {
+    flex: 1;
+}
+
+
+/* ===== FILE INPUT SPACING ===== */
+
+input[type="file"] {
+    margin-top: 10px;
+}
+
+
+/* ===== SUBMIT BUTTON ===== */
+
+.submit-btn {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+
+/* ===== REPORT PAGE ===== */
+
+.report-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 40px;
     border-radius: 10px;
-    margin-top: 12px;
-    border-left: 4px solid #2e8b57;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* HEADER */
+
+.report-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.report-header h1 {
+    margin: 0;
+    color: #1e3a8a;
+}
+
+.report-header p {
+    margin: 5px 0;
+    color: #666;
+}
+
+
+/* SECTIONS */
+
+.report-section {
+    margin-top: 20px;
+}
+
+.report-section h3 {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.report-section p {
+    font-size: 16px;
+    font-weight: 500;
+    background: #f9fafc;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+
+/* FOOTER */
+
+.report-footer {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+}
+
+
+/* PRINT BUTTON */
+
+.print-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+/* PRINT STYLE */
+
+@media print {
+    .print-btn {
+        display: none;
+    }
+    body {
+        background: white;
+    }
+    .report-container {
+        box-shadow: none;
+        margin: 0;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: linear-gradient(135deg, #2e8b57, #3cb371);
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f1f5f9;
 }
