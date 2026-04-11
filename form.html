@@ -3,47 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>MedBridge</title>
+    <title>Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <div class="header">🩺 MedBridge</div>
+
     <div class="app">
-
-        <div class="header">🏥 MedBridge</div>
-
         <div class="card">
 
-            <h2 id="title"></h2>
+            <h2 id="title">Enter Symptoms</h2>
 
             <form action="summary.php" method="POST">
 
-                <label id="label-body"></label>
-                <select name="body" id="bodySelect"></select>
+                <label>Body Part</label>
+                <div class="dropdown">
+                    <div class="dropdown-selected" onclick="toggleDropdown('bodyDropdown')">Select Body</div>
+                    <div class="dropdown-options" id="bodyDropdown"></div>
+                    <input type="hidden" name="body" id="bodyInput">
+                </div>
 
-                <label id="label-symptom"></label>
-                <select name="symptom" id="symptomSelect"></select>
+                <label>Symptom</label>
+                <div class="dropdown">
+                    <div class="dropdown-selected" onclick="toggleDropdown('symptomDropdown')">Select Symptom</div>
+                    <div class="dropdown-options" id="symptomDropdown"></div>
+                    <input type="hidden" name="symptom" id="symptomInput">
+                </div>
 
-                <label id="label-pain"></label>
+                <label>Pain Level</label>
                 <input type="number" name="pain">
 
-                <label id="label-duration"></label>
+                <label>Duration</label>
                 <select name="duration" id="durationSelect"></select>
 
-                <label id="label-notes"></label>
+                <label>Notes</label>
                 <textarea name="notes" id="notes"></textarea>
 
-                <button type="button" onclick="startVoice()">🎤 Speak</button>
+                <button type="button" class="mic-btn" onclick="startVoice()">🎤 Speak</button>
 
-                <label>📄 Upload Document</label>
-                <input type="file" id="fileInput" accept=".txt">
+                <label>Upload Document</label>
+                <input type="file" id="fileInput">
 
                 <button type="button" onclick="handleFile()">Translate File</button>
 
-                <textarea id="translatedText" placeholder="Translated text will appear here"></textarea>
+                <textarea id="translatedText"></textarea>
 
-                <button id="submit-btn" type="submit"></button>
+                <button type="submit">Generate Summary</button>
 
             </form>
 
@@ -51,6 +58,7 @@
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

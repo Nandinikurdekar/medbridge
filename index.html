@@ -4,34 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <title>MedBridge</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="landing-page"></body>
 
-    <div class="container">
-        <h1>🏥 MedBridge</h1>
-        <p>Select Language</p>
+<!-- HERO -->
+<div class="hero">
 
-        <select id="language">
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-        <option value="ta">Tamil</option>
-        <option value="te">Telugu</option>
-        <option value="bn">Bengali</option>
-        <option value="kn">Kannada</option>
-        <option value="kok">Konkani</option>
-    </select>
+    <div class="glass-card">
 
-        <button onclick="goToForm()">Continue</button>
+        <h1>MedBridge</h1>
+        <p>Breaking language barriers in healthcare</p>
+
+        <!-- LANGUAGE -->
+        <select id="langSelect">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="kn">Kannada</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="bn">Bengali</option>
+                <option value="kok">Konkani</option>
+            </select>
+
+        <button onclick="startApp()">Get Started →</button>
+
     </div>
 
-    <script>
-        function goToForm() {
-            localStorage.setItem("lang", document.getElementById("language").value);
-            window.location.href = "form.html";
-        }
-    </script>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+
+    <div class="feature-card">
+        <h3>🌐 Multi-language</h3>
+        <p>Communicate in regional languages effortlessly</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🎤 Voice Input</h3>
+        <p>Describe symptoms using natural speech</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>📄 Smart Reports</h3>
+        <p>Generate clean, structured patient summaries</p>
+    </div>
+
+</div>
+
+<script>
+    function startApp() {
+        let lang = document.getElementById("langSelect").value;
+        localStorage.setItem("lang", lang);
+        window.location.href = "form.html";
+    }
+</script>
 
 </body>
 
